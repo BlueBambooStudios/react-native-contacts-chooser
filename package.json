@@ -1,0 +1,33 @@
+{
+  "name": "react-native-contacts-picker",
+  "title": "React Native Contacts Picker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluebamboostudios/react-native-contacts-picker.git",
+    "baseUrl": "https://github.com/bluebamboostudios/react-native-contacts-picker"
+  },
+  "keywords": [
+    "react-native"
+  ],
+  "author": {
+    "name": "Blue Bamboo Studios",
+    "email": "hello@bluebamboostudios.com"
+  },
+  "license": "MIT",
+  "licenseFilename": "LICENSE",
+  "readmeFilename": "README.md",
+  "peerDependencies": {
+    "react": "16.0.0-alpha.6",
+    "react-native": "^0.44.1"
+  },
+  "devDependencies": {
+    "react": "16.0.0-alpha.6",
+    "react-native": "^0.44.1"
+  }
+}
