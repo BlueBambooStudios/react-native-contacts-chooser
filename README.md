@@ -93,3 +93,5 @@ try {
 - [ ] Android support
 - [ ] Allow picking properties
 - [ ] Allow multi select
+- [ ] Tests!
+- [ ] Better documentation
