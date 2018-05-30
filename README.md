@@ -49,4 +49,47 @@ try {
 	console.error(e);
 }
 ```
+
+## Methods
+
+### Request access (iOS)
+```javascript
+import ContactsPicker from 'react-native-contacts-chooser';
+
+// TODO: What to do with the module?
+try {
+	const granted = ContactsPicker.requestAccess();
+} catch (e) {
+	console.error(e);
+}
+```
+
+### Check access (iOS)
+```javascript
+import ContactsPicker from 'react-native-contacts-chooser';
+
+// TODO: What to do with the module?
+try {
+	const granted = ContactsPicker.requestAccess();
+} catch (e) {
+	console.error(e);
+}
+```
+
+### Get contact
+```javascript
+import ContactsPicker from 'react-native-contacts-chooser';
+
+// TODO: What to do with the module?
+try {
+	const granted = ContactsPicker.pickContact();
+} catch (e) {
+	console.error(e);
+}
+```
   
+## TODO
+
+- [ ] Android support
+- [ ] Allow picking properties
+- [ ] Allow multi select
