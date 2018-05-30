@@ -1,6 +1,6 @@
 {
-  "name": "@bluebamboostudios/react-native-contacts-picker",
-  "title": "React Native Contacts Picker",
+  "name": "react-native-contacts-chooser",
+  "title": "React Native Contacts Chooser",
   "version": "1.0.0-alpha.1",
   "description": "Native wrapper for iOS and Android contacts picker UIs.",
   "main": "index.js",
@@ -9,8 +9,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bluebamboostudios/react-native-contacts-picker.git",
-    "baseUrl": "https://github.com/bluebamboostudios/react-native-contacts-picker"
+    "url": "git+https://github.com/bluebamboostudios/react-native-contacts-chooser.git",
+    "baseUrl": "https://github.com/bluebamboostudios/react-native-contacts-chooser"
   },
   "keywords": [
     "react-native"
@@ -27,7 +27,7 @@
     "react-native": "^0.44.1"
   },
   "bugs": {
-    "url": "https://github.com/bluebamboostudios/react-native-contacts-picker/issues"
+    "url": "https://github.com/bluebamboostudios/react-native-contacts-chooser/issues"
   },
-  "homepage": "https://github.com/bluebamboostudios/react-native-contacts-picker#readme"
+  "homepage": "https://github.com/bluebamboostudios/react-native-contacts-chooser#readme"
 }

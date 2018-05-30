@@ -5,11 +5,11 @@ Native wrapper for iOS and Android contacts picker UIs.
 
 ## Getting started
 
-`$ npm install react-native-contacts-picker --save`
+`$ npm install react-native-contacts-chooser --save`
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-contacts-picker`
+`$ react-native link react-native-contacts-chooser`
 
 ### Manual installation
 
@@ -17,7 +17,7 @@ Native wrapper for iOS and Android contacts picker UIs.
 #### iOS
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-contacts-picker` and add `RNContactsPicker.xcodeproj`
+2. Go to `node_modules` ➜ `react-native-contacts-chooser` and add `RNContactsPicker.xcodeproj`
 3. In XCode, in the project navigator, select your project. Add `libRNContactsPicker.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Run your project (`Cmd+R`)<
 5. Add ```Privacy - Contacts Usage Description``` to your project's info.plist
@@ -40,11 +40,11 @@ Native wrapper for iOS and Android contacts picker UIs.
 
 ## Usage
 ```javascript
-import RNContactsPicker from 'react-native-contacts-picker';
+import ContactsPicker from 'react-native-contacts-chooser';
 
 // TODO: What to do with the module?
 try {
-	const granted = RNContactsPicker.requestAccess();
+	const granted = ContactsPicker.requestAccess();
 } catch (e) {
 	console.error(e);
 }
