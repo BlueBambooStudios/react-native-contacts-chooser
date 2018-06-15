@@ -1,7 +1,7 @@
 {
   "name": "react-native-contacts-chooser",
   "title": "React Native Contacts Chooser",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "Native wrapper for iOS and Android contacts picker UIs.",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,10 @@
     "baseUrl": "https://github.com/bluebamboostudios/react-native-contacts-chooser"
   },
   "keywords": [
-    "react-native"
+    "react",
+    "react-native",
+    "ios",
+    "contacts"
   ],
   "author": "Blue Bamboo Studios <hello@bluebamboostudios.com> (https://bluebamboostudios.com)",
   "license": "MIT",
