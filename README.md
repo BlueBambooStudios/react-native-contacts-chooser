@@ -1,5 +1,5 @@
 
-# react-native-contacts-picker
+# [React Native Contacts Chooser](https://github.com/BlueBambooStudios/react-native-contacts-chooser) &middot; [![npm version](https://badge.fury.io/js/react-native-contacts-chooser.svg)](https://badge.fury.io/js/react-native-contacts-chooser) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/BlueBambooStudios/react-native-contacts-chooser/pulls)
 
 Native wrapper for iOS and Android contacts picker UIs.
 
