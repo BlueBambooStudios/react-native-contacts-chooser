@@ -13,7 +13,6 @@ Native wrapper for iOS and Android contacts picker UIs.
 
 ### Manual installation
 
-
 #### iOS
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
@@ -42,11 +41,14 @@ Native wrapper for iOS and Android contacts picker UIs.
 ```javascript
 import ContactsPicker from 'react-native-contacts-chooser';
 
-// TODO: What to do with the module?
 try {
 	const granted = ContactsPicker.requestAccess();
+	if (granted) {
+		const contact = ContactsPciker.pickContact();
+		alert(JSON.stringify(contact));
+	}
 } catch (e) {
-	console.error(e);
+	console.warn(e);
 }
 ```
 
@@ -56,7 +58,6 @@ try {
 ```javascript
 import ContactsPicker from 'react-native-contacts-chooser';
 
-// TODO: What to do with the module?
 try {
 	const granted = ContactsPicker.requestAccess();
 } catch (e) {
@@ -68,9 +69,8 @@ try {
 ```javascript
 import ContactsPicker from 'react-native-contacts-chooser';
 
-// TODO: What to do with the module?
 try {
-	const granted = ContactsPicker.requestAccess();
+	const granted = ContactsPicker.checkAccess();
 } catch (e) {
 	console.error(e);
 }
@@ -80,9 +80,30 @@ try {
 ```javascript
 import ContactsPicker from 'react-native-contacts-chooser';
 
-// TODO: What to do with the module?
 try {
-	const granted = ContactsPicker.pickContact();
+	const contact = ContactsPicker.pickContact();
+} catch (e) {
+	console.error(e);
+}
+```
+
+### Get multiple contacts
+```javascript
+import ContactsPicker from 'react-native-contacts-chooser';
+
+try {
+	const contacts = ContactsPicker.pickContacts();
+} catch (e) {
+	console.error(e);
+}
+```
+
+### Get contact properties
+```javascript
+import ContactsPicker from 'react-native-contacts-chooser';
+
+try {
+	const contact = ContactsPicker.pickProperty();
 } catch (e) {
 	console.error(e);
 }
@@ -91,7 +112,11 @@ try {
 ## TODO
 
 - [ ] Android support
-- [ ] Allow picking properties
-- [ ] Allow multi select
+- [x] Allow picking properties
+- [x] Allow multi select
 - [ ] Tests!
 - [ ] Better documentation
+
+## Known Issues
+
+on iOS there is a bug with picking multiple properties that causes the picker UI to present as the mutliple contact picker and therefore fails to return multiple properties.
