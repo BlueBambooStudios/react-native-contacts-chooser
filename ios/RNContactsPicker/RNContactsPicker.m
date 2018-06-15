@@ -7,18 +7,22 @@
 //
 
 #import "RNContactsPicker.h"
+#import "RNContactsDelegate.h"
+#import "RNContactsDelegateContactSingle.h"
+#import "RNContactsDelegateContactMulti.h"
+#import "RNContactsDelegatePropertySingle.h"
+#import "RNContactsDelegatePropertyMulti.h"
 
 typedef NS_ENUM(NSUInteger, PickerMode) {
-    PickerModeContact,
-    PickerModeProperty,
+    PickerModeContactSingle,
+    PickerModePropertySingle,
     PickerModeContactMulti,
     PickerModePropertyMulti
 };
 
 @interface RNContactsPicker()
 
-@property (nonatomic, strong) RCTPromiseResolveBlock _resolver;
-@property (nonatomic, strong) RCTPromiseRejectBlock _rejecter;
+@property (nonatomic, strong) RNContactsDelegate<CNContactPickerDelegate> *delegate;
 
 @end
 
@@ -55,68 +59,60 @@ RCT_EXPORT_METHOD(requestAccess:(RCTPromiseResolveBlock)resolve rejecter:(RCTPro
 
 RCT_EXPORT_METHOD(pickContact:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 {
-    self._resolver = resolve;
-    self._rejecter = reject;
-    
-    [self showContactPicker:PickerModeContact];
+    [self showContactPicker:PickerModeContactSingle resolver:resolve rejecter:reject];
 }
 
-- (void)showContactPicker:(enum PickerMode)mode {
+RCT_EXPORT_METHOD(pickContacts:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
+{
+    [self showContactPicker:PickerModeContactMulti resolver:resolve rejecter:reject];
+}
+
+RCT_EXPORT_METHOD(pickProperty:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
+{
+    [self showContactPicker:PickerModePropertySingle resolver:resolve rejecter:reject];
+}
+
+RCT_EXPORT_METHOD(pickProperties:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
+{
+    [self showContactPicker:PickerModePropertyMulti resolver:resolve rejecter:reject];
+}
+
+- (void)showContactPicker:(enum PickerMode)mode resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject {
+    if ([CNContactStore authorizationStatusForEntityType:CNEntityTypeContacts] != CNAuthorizationStatusAuthorized) {
+        return reject(@"E_PERMISSION_DENIED", @"Denied", nil);
+    }
+    
     CNContactPickerViewController *picker = [[CNContactPickerViewController alloc] init];
     picker.modalPresentationStyle = UIModalPresentationCurrentContext;
     
-    picker.delegate = self;
+    switch (mode) {
+        case PickerModeContactSingle: {
+            _delegate = [[RNContactsDelegateContactSingle alloc] init];
+            break;
+        }
+        case PickerModeContactMulti: {
+            _delegate = [[RNContactsDelegateContactMulti alloc] init];
+            break;
+        }
+        case PickerModePropertySingle: {
+            _delegate = [[RNContactsDelegatePropertySingle alloc] init];
+            break;
+        }
+        case PickerModePropertyMulti: {
+            _delegate = [[RNContactsDelegatePropertyMulti alloc] init];
+            break;
+        }
+    }
+    
+    _delegate._rejecter = reject;
+    _delegate._resolver = resolve;
+    
+    picker.delegate = _delegate;
     
     dispatch_async(dispatch_get_main_queue(), ^{
         UIViewController *root = [UIApplication sharedApplication].delegate.window.rootViewController;
         [root presentViewController:picker animated:YES completion:nil];
     });
-}
-
-- (NSDictionary *) convertContactToDictionary:(CNContact *)contact {
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    
-    NSString *givenName = contact.givenName;
-    NSString *familyName = contact.familyName;
-    
-    [dict setObject:contact.identifier forKey:@"id"];
-    
-    [dict setObject:(givenName) ? givenName : @"" forKey:@"givenName"];
-    [dict setObject:(familyName) ? familyName : @"" forKey:@"familyName"];
-    
-    // Phone Numbers
-    NSMutableArray *phoneNumbers = [[NSMutableArray alloc] init];
-    
-    for (CNLabeledValue<CNPhoneNumber*> *labeledValue in contact.phoneNumbers) {
-        NSString *label = [CNLabeledValue localizedStringForLabel:[labeledValue label]];
-        NSString *value = [[labeledValue value] stringValue];
-        
-        if (!label) {
-            label = [CNLabeledValue localizedStringForLabel:@"other"];
-        }
-        
-        if (value) {
-            NSDictionary *number = [NSDictionary dictionaryWithObjectsAndKeys:label, @"label", value, @"value", nil];
-            [phoneNumbers addObject:number];
-        }
-    }
-    
-    [dict setObject:phoneNumbers forKey:@"phoneNumbers"];
-    
-    return dict;
-}
-
-# pragma mark CNContactPickerDelegate
-
-- (void)contactPicker:(CNContactPickerViewController *)picker didSelectContact:(CNContact *)contact
-{
-    NSDictionary *dict = [self convertContactToDictionary:contact];
-    self._resolver(dict);
-}
-
-- (void)contactPickerDidCancel:(CNContactPickerViewController *)picker
-{
-    self._rejecter(@"E_PICKER_CANCELLED", @"Cancelled", nil);
 }
 
 @end

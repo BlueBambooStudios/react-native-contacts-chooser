@@ -15,7 +15,7 @@
 @import Contacts;
 @import ContactsUI;
 
-@interface RNContactsPicker : NSObject <RCTBridgeModule, CNContactPickerDelegate>
+@interface RNContactsPicker : NSObject <RCTBridgeModule>
 
 @end
   

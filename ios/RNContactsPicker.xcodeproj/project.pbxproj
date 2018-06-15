@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4A7DB79A20BDA9C6008876CB /* RNContactsPicker.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B3E7B5881CC2AC0600A0062D /* RNContactsPicker.h */; };
+		4A87A29A20D3BC1F00038298 /* RNContactsDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A87A29920D3BC1F00038298 /* RNContactsDelegate.m */; };
+		4A87A29D20D3BD3E00038298 /* RNContactsUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A87A29C20D3BD3E00038298 /* RNContactsUtil.m */; };
+		4A87A2A120D3C7CC00038298 /* RNContactsDelegateContactSingle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A87A2A020D3C7CC00038298 /* RNContactsDelegateContactSingle.m */; };
+		4A87A2A420D3D45B00038298 /* RNContactsDelegateContactMulti.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A87A2A320D3D45B00038298 /* RNContactsDelegateContactMulti.m */; };
+		4A87A2A720D3D61400038298 /* RNContactsDelegatePropertySingle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A87A2A620D3D61400038298 /* RNContactsDelegatePropertySingle.m */; };
+		4A87A2AA20D3D62400038298 /* RNContactsDelegatePropertyMulti.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A87A2A920D3D62400038298 /* RNContactsDelegatePropertyMulti.m */; };
 		B3E7B58A1CC2AC0600A0062D /* RNContactsPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNContactsPicker.m */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +32,18 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNContactsPicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNContactsPicker.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A87A29820D3BC1F00038298 /* RNContactsDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNContactsDelegate.h; sourceTree = "<group>"; };
+		4A87A29920D3BC1F00038298 /* RNContactsDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNContactsDelegate.m; sourceTree = "<group>"; };
+		4A87A29B20D3BD3E00038298 /* RNContactsUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNContactsUtil.h; sourceTree = "<group>"; };
+		4A87A29C20D3BD3E00038298 /* RNContactsUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNContactsUtil.m; sourceTree = "<group>"; };
+		4A87A29F20D3C7CC00038298 /* RNContactsDelegateContactSingle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNContactsDelegateContactSingle.h; sourceTree = "<group>"; };
+		4A87A2A020D3C7CC00038298 /* RNContactsDelegateContactSingle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNContactsDelegateContactSingle.m; sourceTree = "<group>"; };
+		4A87A2A220D3D45B00038298 /* RNContactsDelegateContactMulti.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNContactsDelegateContactMulti.h; sourceTree = "<group>"; };
+		4A87A2A320D3D45B00038298 /* RNContactsDelegateContactMulti.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNContactsDelegateContactMulti.m; sourceTree = "<group>"; };
+		4A87A2A520D3D61400038298 /* RNContactsDelegatePropertySingle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNContactsDelegatePropertySingle.h; sourceTree = "<group>"; };
+		4A87A2A620D3D61400038298 /* RNContactsDelegatePropertySingle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNContactsDelegatePropertySingle.m; sourceTree = "<group>"; };
+		4A87A2A820D3D62400038298 /* RNContactsDelegatePropertyMulti.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNContactsDelegatePropertyMulti.h; sourceTree = "<group>"; };
+		4A87A2A920D3D62400038298 /* RNContactsDelegatePropertyMulti.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNContactsDelegatePropertyMulti.m; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* RNContactsPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNContactsPicker.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNContactsPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNContactsPicker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,6 +72,18 @@
 			children = (
 				B3E7B5881CC2AC0600A0062D /* RNContactsPicker.h */,
 				B3E7B5891CC2AC0600A0062D /* RNContactsPicker.m */,
+				4A87A29820D3BC1F00038298 /* RNContactsDelegate.h */,
+				4A87A29920D3BC1F00038298 /* RNContactsDelegate.m */,
+				4A87A29B20D3BD3E00038298 /* RNContactsUtil.h */,
+				4A87A29C20D3BD3E00038298 /* RNContactsUtil.m */,
+				4A87A29F20D3C7CC00038298 /* RNContactsDelegateContactSingle.h */,
+				4A87A2A020D3C7CC00038298 /* RNContactsDelegateContactSingle.m */,
+				4A87A2A220D3D45B00038298 /* RNContactsDelegateContactMulti.h */,
+				4A87A2A320D3D45B00038298 /* RNContactsDelegateContactMulti.m */,
+				4A87A2A520D3D61400038298 /* RNContactsDelegatePropertySingle.h */,
+				4A87A2A620D3D61400038298 /* RNContactsDelegatePropertySingle.m */,
+				4A87A2A820D3D62400038298 /* RNContactsDelegatePropertyMulti.h */,
+				4A87A2A920D3D62400038298 /* RNContactsDelegatePropertyMulti.m */,
 			);
 			path = RNContactsPicker;
 			sourceTree = "<group>";
@@ -122,7 +152,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A87A2A420D3D45B00038298 /* RNContactsDelegateContactMulti.m in Sources */,
+				4A87A2A720D3D61400038298 /* RNContactsDelegatePropertySingle.m in Sources */,
+				4A87A2AA20D3D62400038298 /* RNContactsDelegatePropertyMulti.m in Sources */,
+				4A87A2A120D3C7CC00038298 /* RNContactsDelegateContactSingle.m in Sources */,
 				B3E7B58A1CC2AC0600A0062D /* RNContactsPicker.m in Sources */,
+				4A87A29A20D3BC1F00038298 /* RNContactsDelegate.m in Sources */,
+				4A87A29D20D3BD3E00038298 /* RNContactsUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
